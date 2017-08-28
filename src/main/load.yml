@@ -1,0 +1,18 @@
+execution:
+- concurrency:
+    local: 1
+  throughput:
+    local: 100
+  hold-for: 1m
+  ramp-up: 1m
+  scenario: search_load_test
+
+scenarios:
+  search_load_test:
+    retrieve-resources: true
+    requests:
+      - http://www.onol.wip.gidapps.com/browse/search_br.do?searchText=shirt
+
+reporting:
+- module: final-stats
+- module: console
