@@ -1,0 +1,11 @@
+plugins {
+    id 'com.github.lkishalmi.gatling' version '0.4.1'
+}
+
+repositories {
+    jcenter()
+}
+
+gatling {
+    simulations = ['basic.PeakLoad']
+}
