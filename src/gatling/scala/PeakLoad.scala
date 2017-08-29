@@ -16,6 +16,6 @@ class PeakLoad extends Simulation {
     }
 
   setUp(
-    scn.inject(atOnceUsers(10))
+    scn.inject(rampUsersPerSec(30) to 135 during(60 seconds)
   ).protocols(httpConf)
 }
