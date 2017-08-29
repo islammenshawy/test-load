@@ -12,10 +12,10 @@ class PeakLoad extends Simulation {
   val scn = scenario("PeakLoad")
     .group("Request") {
       exec(http("search page")
-        .get(session => "/browse/search_br.do?searchText=shirt&" + scala.util.Random.nextInt))
+        .get(session => "/browse/search.do?searchText=shirt&"))
     }
 
   setUp(
-    scn.inject(rampUsersPerSec(30) to 135 during(60 seconds))
+    scn.inject(constantUsersPerSec(75) during(5 seconds))
   ).protocols(httpConf)
 }
