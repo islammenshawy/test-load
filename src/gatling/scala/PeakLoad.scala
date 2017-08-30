@@ -26,8 +26,8 @@ class PeakLoad extends Simulation {
   val httpUrlWithParam = httpUrlNoBase.format(brandAccountMap(brand))
 
   //Get the paramters for how many threads and throughput for this brand/env combination.
-  val threads = threadThroughputMap(envBrandCombKey)("threads");
-  val throughput = threadThroughputMap(envBrandCombKey)("throughput");
+  val threads = threadThroughputMap(envBrandCombKey)("threads").toInt;
+  val throughput = threadThroughputMap(envBrandCombKey)("throughput").toInt;
 
 
   val scn = scenario("PeakLoad")
