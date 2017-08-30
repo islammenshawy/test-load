@@ -6,7 +6,7 @@ import scala.util.Properties.envOrElse
 import scala.concurrent.duration._
 
 class PeakLoad extends Simulation {
-  val brandAccountMap = scala.collection.mutable.Map("ON" -> "6063")
+  val brandAccountMap = scala.collection.mutable.Map("ON" -> "6063","GAP" -> "5468")
 
   val baseUrl = envOrElse("TARGET_URL", "http://brm-staging-core-0.brsrvr.com")
   val brand = envOrElse("BRAND_PARAM", "ON")
