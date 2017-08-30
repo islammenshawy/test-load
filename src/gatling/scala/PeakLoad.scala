@@ -2,12 +2,16 @@ package basic
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import scala.util.Properties.envOrElse
 import scala.concurrent.duration._
 
 class PeakLoad extends Simulation {
 
+  val baseUrl = envOrElse("TARGET_URL", "http://brm-staging-core-0.brsrvr.com")
+
   val httpConf = http
-    .baseURL("http://brm-staging-core-0.brsrvr.com")
+    .baseURL(baseUrl)
+
 
   val scn = scenario("PeakLoad")
     .group("Request") {
