@@ -10,7 +10,7 @@ class PeakLoad extends Simulation {
   val brandAccountMap = Map("ON" -> "6063","GAP" -> "5468")
   val threadThroughputMap = Map(
     "ON_staging" -> Map("threads" -> "10", "throughput" -> "60"),
-    "ON_prod" -> Map("threads" -> "260", "throughput" -> "20"),
+    "ON_prod" -> Map("threads" -> "135", "throughput" -> "20"),
     "GAP_staging" -> Map("threads" -> "10", "throughput" -> "60"),
     "GAP_prod" -> Map("threads" -> "10", "throughput" -> "20")
   )
